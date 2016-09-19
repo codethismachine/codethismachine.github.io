@@ -1,0 +1,81 @@
+body{
+	background-color: lightblue; 
+}
+#centerDiv{
+	text-align: center;
+	margin-left: 400px;
+}
+
+h1{
+	margin-left: 300px;
+	text-shadow:  0 0 3px #FF0000, 0 0 5px #0000FF;
+	font-size: 60px;
+}
+ul{
+	list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+}
+li{
+	float: left;
+}
+li img{
+	display: inline-block;
+	padding: 0px 5px;
+	
+}
+
+#im1{
+	margin-left: 300px;
+	margin-top: 50px;
+	height: 300px;
+	width: 400px;
+	
+}
+#bplay{
+	margin-left: 430px;
+	height: 30px;
+	width: 75px;
+	background-color: #FFF000;
+}
+#candleFire1{
+	height: 30px;
+	position: relative;
+}
+#candleFire2{
+	height: 30px;
+	position: relative;
+}
+#candleFire3{
+	height: 30px;
+	position: relative;
+}
+#candleFire4{
+	height: 30px;
+	position: relative;
+}#candleFire5{
+	height: 30px;
+	position: relative;
+}
+
+#candle1{
+	height: 100px;
+	position: relative;
+}
+#candle2{
+	height: 100px;
+	position: relative;
+}
+#candle3{
+	height: 100px;
+	position: relative;
+}
+#candle4{
+	height: 100px;
+	position: relative;
+}
+#candle5{
+	height: 100px;
+	position: relative;
+}
