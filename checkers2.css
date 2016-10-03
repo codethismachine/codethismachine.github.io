@@ -1,0 +1,47 @@
+h2{
+  font-size: 150px;
+  color: red;
+  text-decoration: underline;
+  text-align: center;
+  text-shadow: 2px 4px 4px black;
+}
+.redTile{
+    display:inline-block;
+	background-color: red;
+    width: 100px;
+    height: 100px;
+    margin: -3;
+    padding: 0;
+    border: 0;
+}
+.blackTile{
+   display:inline-block;
+	background-color: #000000;
+    width: 100px;
+    height: 100px;
+    margin: -3;
+    padding: 0;
+    border: 0;
+}
+
+.circleR{
+ display: block;
+ width: 60px;
+ height: 60px;
+ margin: 18%;
+ border-radius: 50%;
+  background: red;
+}
+.circleW{
+ display: block;
+ width: 60px;
+ height: 60px;
+ margin: 20%;
+ border-radius: 50%;
+  background: white;
+}
+#play{
+  display: block;
+  width: 100px;
+ 
+}
