@@ -1,18 +1,18 @@
 var counterRed = 1; 
 var counterWhite = 1;
+
 function DrawBoard(){
   $(document).ready(function(){
     $("#play").hide();
-   // $(".circleR").setAttribute("ondragstart", null);
-   // $(".circleW").setAttribute("ondragstart", null);
     $("#first").removeAttr("disabled");
-   
+  
   });
  
    var element = document.getElementById("board");
   
   for(i = 0; i < 8; i++){
     var _div = document.createElement("div");
+    _div.setAttribute("id", ""+i);
     _div.style.margin="0";
     _div.style.padding="0";
     _div.style.width="800px";
@@ -33,7 +33,12 @@ function DrawBoard(){
   }
     
   }
-  
+  for(i = 1; i <= 12; i++){
+    var tempRed = document.getElementById("r" + i);
+    var tempWhite = document.getElementById("w" + i);
+    tempRed.removeAttribute("ondragstart");
+    tempWhite.removeAttribute("ondragstart"); 
+  }
 
 }
 function redTile(){
@@ -61,9 +66,27 @@ function redP(){
   redPiece.setAttribute("class", "circleR");
   redPiece.setAttribute("draggable", "true");
   redPiece.setAttribute("ondragstart", "drag(event)");
+  redPiece.setAttribute("onclick", "getParent()");
   redPiece.setAttribute("id", "r"+ counterRed);
   return redPiece;
 }
+
+
+  /*$(document).on('click', '.circleR', function (e) {
+    e.preventDefault();
+   var example1 = $(this).parent('div').attr('id');
+    var char1 = example1.charAt(0);
+    var char2 = example1.charAt(1);
+   var restrictId = document.getElementById(""+char1+char2).getAttribute("id");
+    var restrict = document.getElementById("36");
+   var test = document.getElementById("test");
+    test.innerHTML = restrictId;    
+    restrict.removeAttribute("ondrop");
+    $('#results').append('<p>Result from example 1: <strong>' + example1 + '</strong></p>');
+});*/
+
+
+
 
 function whiteP(){
   var whitePiece = document.createElement("div");
@@ -80,7 +103,6 @@ function allowDrop(ev) {
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
-   
 }
 
 function drop(ev) {
@@ -92,3 +114,54 @@ function drop(ev) {
     return;
 }
 
+function EnableRed(){
+    $("#second").removeAttr("disabled");
+ for(i = 1; i <= 12; i++){
+    var red = document.getElementById("r" + i);
+    var white = document.getElementById("w" + i);
+    red.setAttribute("ondragstart", "drag(event)");
+    white.removeAttribute("ondragstart");
+  }
+   var tempFirst = document.getElementById("first");
+   tempFirst.setAttribute("disabled", "disabled");
+    $(document).on('click', '.circleR', function (e) {
+    e.preventDefault();
+   var example1 = $(this).parent('div').attr('id');
+    var char1 = example1.charAt(0);
+    var char2 = example1.charAt(1);
+   var restrictId = document.getElementById(""+char1+char2).getAttribute("id");
+    var restrict = document.getElementById("36");
+   var test = document.getElementById("test");
+    test.innerHTML = restrictId;    
+    restrict.removeAttribute("ondrop");
+    restrict.removeAttribute("ondragover");
+    $('#results').append('<p>Result from example 1: <strong>' + example1 + '</strong></p>');
+});
+
+}
+function EnableWhite(){
+ for(i = 1; i <= 12; i++){
+    var white = document.getElementById("w" + i);
+    var red = document.getElementById("r" + i);
+   white.setAttribute("ondragstart", "drag(event)");
+   red.removeAttribute("ondragstart");
+  }
+   var tempSecond = document.getElementById("second");
+   tempSecond.setAttribute("disabled", "disabled");
+   var tempFirst = document.getElementById("first");
+   tempFirst.removeAttribute("disabled");
+  
+   $(document).on('click', '.circleW', function (e) {
+    e.preventDefault();
+   var example1 = $(this).parent('div').attr('id');
+    var char1 = example1.charAt(0);
+    var char2 = example1.charAt(1);
+   var restrictId = document.getElementById(""+char1+char2).getAttribute("id");
+    var restrict = document.getElementById("34");
+   var test = document.getElementById("test");
+    test.innerHTML = restrictId;    
+    restrict.removeAttribute("ondrop");
+    restrict.removeAttribute("ondragover");
+    $('#results').append('<p>Result from example 1: <strong>' + example1 + '</strong></p>');
+});
+}
